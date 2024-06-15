@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Interface</title>
+    <title>Noclick</title>
     <link rel="stylesheet" href="./css/styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
@@ -14,7 +14,10 @@
 <div class="container">
     <div class="background">
         <div class="info-header" id="infoHeader">
-            <div class="info-slide">That's it! Easy, isn't? You are eligible!</div>
+            <div class="info-slide">
+                <div class="info-slide1">You're eligible!</div>
+                <div class="info-slide2">That's easy! Isn't?</div>
+            </div>
         </div>
         <div class="large-number">
             <span id="time-spent">0.0</span>
@@ -22,13 +25,68 @@
         </div>
         <div class="bottom-panel" id="bottomPanel">
             <div class="bottom-icons">
-                <div class="icon">Tasks</div>
-                <div class="icon">Leaderboads</div>
-                <div class="icon">Settings</div>
+                <div class="icon" onclick="showSection('tasksSection')">Tasks</div>
+                <div class="icon" onclick="showSection('leaderboardsSection')">Leaderboards</div>
+                <div class="icon" onclick="showSection('settingsSection')">Settings</div>
             </div>
         </div>
         <button class="toggle-button" id="toggleButton" onclick="toggleMenu()">↑</button>
     </div>
+    <div id="tasksSection" class="section">
+        <button class="back-button" onclick="showSection('mainSection')">←</button>
+        <div class="background">
+            <div class="tasks-content">
+                <h2>Do tasks to increase your multiplier</h2>
+                <div class="tasks-list">
+                    <ul>
+                        <li>Suscribe to our channel</li>
+                        <li>Connect the wallet</li>
+                        <li>Mint NFT</li>
+                        <li>Refs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="leaderboardsSection" class="section">
+        <button class="back-button" onclick="showSection('mainSection')">←</button>
+        <div class="background">
+            <div class="leaderboards-content">
+                <h2>Leaderboards</h2>
+                <div class="leaderboards-list">
+                    <ul id="leaderboardsList">
+                        <li class="leaderboard-header">
+                            <span>Username</span>
+                            <span>Scores</span>
+                            <span>Multiplier</span>
+                        </li>
+                        <!-- Данные будут динамически добавляться здесь -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="settingsSection" class="section">
+        <div>
+            <button class="back-button" onclick="showSection('mainSection')">←</button>
+            <div class="user-info-header">
+                <img src="/static/logo.webp" height="30px" alt="Ava" class="avatar">
+                <span class="username">player1</span>
+            </div>
+        </div>
+        <div class="background">
+            <div class="settings-content">
+                <div class="user-info">
+                    <button class="connect-wallet-button">Connect wallet</button>
+                </div>
+                <div class="user-details">
+                    <div>Your referrals <span>3</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="settings-bottom">Help</div>
+    </div>
+
 </div>
 <script src="./js/script.js"></script>
 </body>
