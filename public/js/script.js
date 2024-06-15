@@ -7,7 +7,7 @@ function getUserNumber(){
     return 0;
 }
 
-document.getElementById('toggleButton').click(); // ATTENTION!
+// document.getElementById('toggleButton').click(); // ATTENTION!
 
 // Запуск обновления времени с интервалом в 1 секунду
 intervalId = setInterval(updateTimeSpent, 1000);
